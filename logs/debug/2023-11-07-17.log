@@ -1,0 +1,10 @@
+2023-11-07T12:09:57.122Z [test] info: listening on port 5010
+2023-11-07T12:23:28.235Z [test] info: listening on port 5010
+2023-11-07T12:23:36.912Z [test] error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Hours : 0 Minutes','0',"0 Hours : 0 Minutes")' at line 2
+2023-11-07T12:24:21.336Z [test] info: listening on port 5010
+2023-11-07T12:24:21.570Z [test] error: Unknown column 'Process' in 'field list'
+2023-11-07T12:24:23.768Z [test] error: Unknown column 'Process' in 'field list'
+2023-11-07T12:24:55.631Z [test] info: listening on port 5010
+2023-11-07T12:24:55.812Z [test] error: Unknown column 'MachineHours' in 'field list'
+2023-11-07T12:27:52.223Z [test] info: listening on port 5010
+2023-11-07T12:27:54.523Z [test] error: Column count doesn't match value count at row 1

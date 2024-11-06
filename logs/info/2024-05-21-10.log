@@ -1,0 +1,16 @@
+2024-05-21T04:47:55.772Z [test] info: listening on port 5010
+2024-05-21T04:59:25.728Z [test] info: listening on port 5010
+2024-05-21T04:59:38.828Z [test] info: listening on port 5010
+2024-05-21T04:59:55.339Z [test] info: listening on port 5010
+2024-05-21T05:00:33.965Z [test] info: listening on port 5010
+2024-05-21T05:04:50.901Z [test] info: listening on port 5010
+2024-05-21T05:07:15.364Z [test] info: listening on port 5010
+2024-05-21T05:11:06.102Z [test] info: listening on port 5010
+2024-05-21T05:12:27.989Z [test] info: listening on port 5010
+2024-05-21T05:12:31.225Z [test] error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE s.IssueID=48161' at line 1
+2024-05-21T05:12:47.150Z [test] info: listening on port 5010
+2024-05-21T05:17:14.443Z [test] info: listening on port 5010
+2024-05-21T05:17:36.343Z [test] info: listening on port 5010
+2024-05-21T05:20:31.221Z [test] info: listening on port 5010
+2024-05-21T05:22:18.431Z [test] info: listening on port 5010
+2024-05-21T05:24:50.694Z [test] info: listening on port 5010

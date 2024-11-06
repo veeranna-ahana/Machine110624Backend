@@ -1,0 +1,10 @@
+2024-05-10T06:38:39.105Z [test] info: listening on port 5010
+2024-05-10T06:38:43.845Z [test] info: listening on port 5010
+2024-05-10T06:43:29.767Z [test] info: listening on port 5010
+2024-05-10T07:07:29.277Z [test] info: listening on port 5010
+2024-05-10T07:08:46.161Z [test] info: listening on port 5010
+2024-05-10T07:19:44.516Z [test] error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 3
+2024-05-10T07:21:00.457Z [test] info: listening on port 5010
+2024-05-10T07:21:54.423Z [test] info: listening on port 5010
+2024-05-10T07:22:29.474Z [test] error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 3
+2024-05-10T07:22:29.540Z [test] error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 3

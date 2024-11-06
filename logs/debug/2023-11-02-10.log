@@ -1,0 +1,15 @@
+2023-11-02T04:33:39.899Z [test] error: Truncated incorrect DOUBLE value: 'undefined'
+2023-11-02T04:53:41.123Z [test] info: listening on port 5010
+2023-11-02T05:09:45.233Z [test] info: listening on port 5010
+2023-11-02T05:12:18.040Z [test] info: listening on port 5010
+2023-11-02T05:12:48.554Z [test] error: Status Code : undefined  - Error : Cannot read properties of undefined (reading 'QtyRejected')
+2023-11-02T05:14:45.998Z [test] info: listening on port 5010
+2023-11-02T05:14:51.122Z [test] info: listening on port 5010
+2023-11-02T05:14:54.601Z [test] error: Status Code : undefined  - Error : Cannot read properties of undefined (reading 'QtyRejected')
+2023-11-02T05:20:01.876Z [test] error: Status Code : undefined  - Error : Cannot read properties of undefined (reading 'QtyRejected')
+2023-11-02T05:20:11.807Z [test] info: listening on port 5010
+2023-11-02T05:21:14.557Z [test] info: listening on port 5010
+2023-11-02T05:21:29.574Z [test] error: Truncated incorrect DOUBLE value: 'undefined'
+2023-11-02T05:21:56.489Z [test] error: Truncated incorrect DOUBLE value: 'undefined'
+2023-11-02T05:22:05.937Z [test] error: Truncated incorrect DOUBLE value: 'undefined'
+2023-11-02T05:23:22.060Z [test] info: listening on port 5010

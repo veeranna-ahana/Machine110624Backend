@@ -1,0 +1,17 @@
+2023-11-18T15:30:01.095Z [test] info: listening on port 5010
+2023-11-18T15:30:22.360Z [test] error: Unknown column 'Active' in 'where clause'
+2023-11-18T15:45:29.910Z [test] error: Unknown column 'Active' in 'where clause'
+2023-11-18T16:06:39.123Z [test] info: listening on port 5010
+2023-11-18T16:06:41.264Z [test] error: Unknown column 'Active' in 'where clause'
+2023-11-18T16:14:08.106Z [test] info: listening on port 5010
+2023-11-18T16:14:43.578Z [test] info: listening on port 5010
+2023-11-18T16:19:34.756Z [test] info: listening on port 5010
+2023-11-18T16:20:10.542Z [test] info: listening on port 5010
+2023-11-18T16:20:51.445Z [test] error: Unknown column 'id' in 'order clause'
+2023-11-18T16:24:29.551Z [test] info: listening on port 5010
+2023-11-18T16:24:37.859Z [test] info: listening on port 5010
+2023-11-18T16:26:10.867Z [test] info: listening on port 5010
+2023-11-18T16:26:14.093Z [test] info: listening on port 5010
+2023-11-18T16:26:29.716Z [test] info: listening on port 5010
+2023-11-18T16:27:22.240Z [test] info: listening on port 5010
+2023-11-18T16:29:22.199Z [test] info: listening on port 5010

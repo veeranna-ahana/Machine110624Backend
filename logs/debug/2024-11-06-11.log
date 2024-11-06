@@ -1,0 +1,7 @@
+2024-11-06T06:01:04.083Z [test] error: Cannot read properties of undefined (reading 'constructor')
+2024-11-06T06:01:17.570Z [test] info: listening on port 5010
+2024-11-06T06:01:40.692Z [test] info: listening on port 5010
+2024-11-06T06:02:06.003Z [test] error: Cannot read properties of undefined (reading 'constructor')
+2024-11-06T06:06:05.388Z [test] info: listening on port 5010
+2024-11-06T06:06:31.275Z [test] info: listening on port 5010
+2024-11-06T06:08:29.174Z [test] info: listening on port 5010

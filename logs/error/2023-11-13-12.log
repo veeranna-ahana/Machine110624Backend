@@ -1,0 +1,9 @@
+2023-11-13T06:30:31.108Z [test] error: [object Object],[object Object],[object Object]
+2023-11-13T06:31:13.841Z [test] error: [object Object],[object Object],[object Object]
+2023-11-13T06:32:43.285Z [test] error: [object Object],[object Object],[object Object]
+2023-11-13T06:32:43.908Z [test] error: [object Object],[object Object],[object Object]
+2023-11-13T06:41:33.379Z [test] error: calculateRunningTime is not defined
+2023-11-13T06:44:17.468Z [test] error: Can't add new command when connection is in closed state
+2023-11-13T06:44:35.102Z [test] error: Can't add new command when connection is in closed state
+2023-11-13T06:46:12.445Z [test] error: Can't add new command when connection is in closed state
+2023-11-13T06:47:15.332Z [test] error: Can't add new command when connection is in closed state

@@ -1,0 +1,2 @@
+2024-05-06T08:05:47.289Z [test] info: Login Success - adminuser
+2024-05-06T08:09:45.107Z [test] error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 3

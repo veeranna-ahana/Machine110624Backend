@@ -1,0 +1,6 @@
+2024-10-15T11:14:23.584Z [test] info: listening on port 5010
+2024-10-15T11:14:59.419Z [test] info: Login Success - adminuser
+2024-10-15T11:15:51.304Z [test] error: Status Code : undefined  - Error : Cannot read properties of undefined (reading 'map')
+2024-10-15T11:16:32.119Z [test] error: Status Code : undefined  - Error : Unknown column 'undefined' in 'field list'
+2024-10-15T11:17:21.906Z [test] info: listening on port 5010
+2024-10-15T11:17:24.804Z [test] info: listening on port 5010

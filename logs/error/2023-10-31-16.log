@@ -1,0 +1,7 @@
+2023-10-31T10:37:51.725Z [test] error: Truncated incorrect DOUBLE value: 'undefined'
+2023-10-31T11:23:58.222Z [test] error: Truncated incorrect DOUBLE value: 'undefined'
+2023-10-31T11:24:31.550Z [test] error: Truncated incorrect DOUBLE value: 'undefined'
+2023-10-31T11:25:40.646Z [test] error: Truncated incorrect DOUBLE value: 'undefined'
+2023-10-31T11:25:44.039Z [test] error: Truncated incorrect DOUBLE value: 'undefined'
+2023-10-31T11:26:51.308Z [test] error: Truncated incorrect DOUBLE value: 'undefined'
+2023-10-31T11:28:50.853Z [test] error: Unknown column 'undefined' in 'where clause'

@@ -1,0 +1,32 @@
+2023-11-09T11:33:42.027Z [test] info: listening on port 5010
+2023-11-09T11:33:42.149Z [test] error: Incorrect datetime value: '09/11/2023 10:29:01' for column 'ToTime' at row 1
+2023-11-09T11:33:42.151Z [test] error: Incorrect datetime value: '09/11/2023 10:41:18' for column 'ToTime' at row 1
+2023-11-09T11:33:42.152Z [test] error: Incorrect datetime value: '09/11/2023 12:33:12' for column 'ToTime' at row 1
+2023-11-09T11:33:42.154Z [test] error: Incorrect datetime value: '09/11/2023 12:34:04' for column 'ToTime' at row 1
+2023-11-09T11:33:42.155Z [test] error: Incorrect datetime value: '09/11/2023 12:34:45' for column 'ToTime' at row 1
+2023-11-09T11:34:15.989Z [test] error: Incorrect datetime value: '09/11/2023 10:30:01' for column 'ToTime' at row 1
+2023-11-09T11:34:15.990Z [test] error: Incorrect datetime value: '09/11/2023 10:41:18' for column 'ToTime' at row 1
+2023-11-09T11:34:15.992Z [test] error: Incorrect datetime value: '09/11/2023 12:33:12' for column 'ToTime' at row 1
+2023-11-09T11:34:15.993Z [test] error: Incorrect datetime value: '09/11/2023 12:34:04' for column 'ToTime' at row 1
+2023-11-09T11:34:15.995Z [test] error: Incorrect datetime value: '09/11/2023 12:34:45' for column 'ToTime' at row 1
+2023-11-09T11:34:43.768Z [test] info: listening on port 5010
+2023-11-09T11:34:43.901Z [test] error: Status Code : undefined  - Error : Cannot read properties of undefined (reading 'Remarks')
+2023-11-09T11:38:04.795Z [test] info: listening on port 5010
+2023-11-09T11:40:34.331Z [test] error: Incorrect datetime value: '09/11/2023 10:30:01' for column 'ToTime' at row 1
+2023-11-09T11:40:34.333Z [test] error: Incorrect datetime value: '09/11/2023 10:41:18' for column 'ToTime' at row 1
+2023-11-09T11:40:34.334Z [test] error: Incorrect datetime value: '09/11/2023 12:33:12' for column 'ToTime' at row 1
+2023-11-09T11:40:34.336Z [test] error: Incorrect datetime value: '09/11/2023 12:34:04' for column 'ToTime' at row 1
+2023-11-09T11:40:34.337Z [test] error: Incorrect datetime value: '09/11/2023 12:35:45' for column 'ToTime' at row 1
+2023-11-09T11:49:30.142Z [test] info: listening on port 5010
+2023-11-09T11:49:30.311Z [test] error: Status Code : undefined  - Error : Cannot read properties of undefined (reading 'Remarks')
+2023-11-09T11:50:05.106Z [test] info: listening on port 5010
+2023-11-09T11:52:59.064Z [test] error: Status Code : undefined  - Error : Cannot read properties of undefined (reading 'Remarks')
+2023-11-09T11:54:14.629Z [test] info: listening on port 5010
+2023-11-09T11:55:38.122Z [test] info: listening on port 5010
+2023-11-09T11:57:33.642Z [test] info: listening on port 5010
+2023-11-09T11:59:17.307Z [test] info: listening on port 5010
+2023-11-09T12:00:07.623Z [test] info: listening on port 5010
+2023-11-09T12:00:21.976Z [test] info: listening on port 5010
+2023-11-09T12:00:38.817Z [test] info: listening on port 5010
+2023-11-09T12:01:52.731Z [test] info: listening on port 5010
+2023-11-09T12:01:55.427Z [test] error: Status Code : undefined  - Error : Cannot read properties of undefined (reading 'Remarks')

@@ -1,0 +1,7 @@
+2023-11-02T04:33:39.899Z [test] error: Truncated incorrect DOUBLE value: 'undefined'
+2023-11-02T05:12:48.554Z [test] error: Status Code : undefined  - Error : Cannot read properties of undefined (reading 'QtyRejected')
+2023-11-02T05:14:54.601Z [test] error: Status Code : undefined  - Error : Cannot read properties of undefined (reading 'QtyRejected')
+2023-11-02T05:20:01.876Z [test] error: Status Code : undefined  - Error : Cannot read properties of undefined (reading 'QtyRejected')
+2023-11-02T05:21:29.574Z [test] error: Truncated incorrect DOUBLE value: 'undefined'
+2023-11-02T05:21:56.489Z [test] error: Truncated incorrect DOUBLE value: 'undefined'
+2023-11-02T05:22:05.937Z [test] error: Truncated incorrect DOUBLE value: 'undefined'

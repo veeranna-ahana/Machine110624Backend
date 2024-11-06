@@ -1,0 +1,18 @@
+2024-10-15T12:02:10.950Z [test] info: listening on port 5010
+2024-10-15T12:02:36.665Z [test] info: listening on port 5010
+2024-10-15T12:05:35.630Z [test] info: listening on port 5010
+2024-10-15T12:06:01.293Z [test] error: Status Code : undefined  - Error : Unknown column 'undefined' in 'field list'
+2024-10-15T12:13:48.077Z [test] info: listening on port 5010
+2024-10-15T12:14:02.520Z [test] info: listening on port 5010
+2024-10-15T12:20:39.523Z [test] info: listening on port 5010
+2024-10-15T12:22:51.102Z [test] info: listening on port 5010
+2024-10-15T12:23:41.273Z [test] info: listening on port 5010
+2024-10-15T12:24:08.090Z [test] info: listening on port 5010
+2024-10-15T12:24:13.673Z [test] info: listening on port 5010
+2024-10-15T12:28:12.794Z [test] info: listening on port 5010
+2024-10-15T12:28:16.585Z [test] error: Status Code : undefined  - Error : closeQuery is not defined
+2024-10-15T12:28:24.136Z [test] info: listening on port 5010
+2024-10-15T12:28:25.047Z [test] info: listening on port 5010
+2024-10-15T12:28:27.632Z [test] error: Status Code : undefined  - Error : closeQuery is not defined
+2024-10-15T12:29:20.982Z [test] info: listening on port 5010
+2024-10-15T12:29:24.618Z [test] info: listening on port 5010

@@ -1,0 +1,3 @@
+2023-10-17T11:42:05.162Z [test] error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Use='1'' at line 1
+2023-10-17T11:42:08.411Z [test] error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Use='1'' at line 1
+2023-10-17T11:42:12.273Z [test] error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Use='1'' at line 1
