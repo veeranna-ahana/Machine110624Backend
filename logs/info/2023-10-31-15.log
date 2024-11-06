@@ -1,0 +1,4 @@
+2023-10-31T09:46:02.298Z [test] error: Truncated incorrect DOUBLE value: 'undefined'
+2023-10-31T10:06:55.231Z [test] info: listening on port 5010
+2023-10-31T10:08:54.142Z [test] info: listening on port 5010
+2023-10-31T10:22:20.825Z [test] error: Truncated incorrect DOUBLE value: 'undefined'

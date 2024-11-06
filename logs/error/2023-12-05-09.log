@@ -1,0 +1,2 @@
+2023-12-05T04:22:49.071Z [test] error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '', now(), 1)' at line 1
+2023-12-05T04:23:19.095Z [test] error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '', now(), 1)' at line 1

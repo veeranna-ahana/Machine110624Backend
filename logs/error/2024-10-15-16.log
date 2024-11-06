@@ -1,0 +1,2 @@
+2024-10-15T11:15:51.304Z [test] error: Status Code : undefined  - Error : Cannot read properties of undefined (reading 'map')
+2024-10-15T11:16:32.119Z [test] error: Status Code : undefined  - Error : Unknown column 'undefined' in 'field list'

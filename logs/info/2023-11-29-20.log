@@ -1,0 +1,16 @@
+2023-11-29T15:03:09.513Z [test] info: listening on port 5010
+2023-11-29T15:03:33.046Z [test] error: Unknown column 'undefined' in 'where clause'
+2023-11-29T15:03:33.056Z [test] error: Unknown column 'undefined' in 'where clause'
+2023-11-29T15:05:52.416Z [test] info: listening on port 5010
+2023-11-29T15:09:39.085Z [test] info: listening on port 5010
+2023-11-29T15:09:47.913Z [test] info: listening on port 5010
+2023-11-29T15:09:53.601Z [test] error: Unknown column 'undefined' in 'where clause'
+2023-11-29T15:09:53.609Z [test] error: Unknown column 'undefined' in 'where clause'
+2023-11-29T15:20:50.418Z [test] error: Unknown column 'undefined' in 'where clause'
+2023-11-29T15:20:50.425Z [test] error: Unknown column 'undefined' in 'where clause'
+2023-11-29T15:21:12.242Z [test] info: listening on port 5010
+2023-11-29T15:21:18.536Z [test] error: Unknown column 'undefined' in 'field list'
+2023-11-29T15:21:18.546Z [test] error: Unknown column 'undefined' in 'field list'
+2023-11-29T15:22:20.426Z [test] info: listening on port 5010
+2023-11-29T15:28:03.468Z [test] info: listening on port 5010
+2023-11-29T15:28:57.113Z [test] info: listening on port 5010

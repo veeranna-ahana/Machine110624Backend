@@ -1,0 +1,27 @@
+2024-10-14T16:11:09.209Z [test] error: Status Code : undefined  - Error : Unknown column 'undefined' in 'field list'
+2024-10-14T16:11:35.133Z [test] info: listening on port 5010
+2024-10-14T16:12:56.375Z [test] error: Status Code : undefined  - Error : Cannot read properties of undefined (reading 'map')
+2024-10-14T16:13:07.667Z [test] info: listening on port 5010
+2024-10-14T16:13:35.917Z [test] error: Status Code : undefined  - Error : Unknown column 'undefined' in 'field list'
+2024-10-14T16:13:48.680Z [test] error: Status Code : undefined  - Error : Unknown column 'undefined' in 'field list'
+2024-10-14T16:15:25.964Z [test] error: Status Code : undefined  - Error : Unknown column 'undefined' in 'field list'
+2024-10-14T16:15:31.135Z [test] error: Status Code : undefined  - Error : Unknown column 'undefined' in 'field list'
+2024-10-14T16:15:35.669Z [test] info: listening on port 5010
+2024-10-14T16:15:57.893Z [test] info: listening on port 5010
+2024-10-14T16:16:02.807Z [test] error: Status Code : undefined  - Error : Unknown column 'undefined' in 'field list'
+2024-10-14T16:16:40.204Z [test] info: listening on port 5010
+2024-10-14T16:16:41.883Z [test] error: Status Code : undefined  - Error : Unknown column 'undefined' in 'field list'
+2024-10-14T16:17:02.376Z [test] info: listening on port 5010
+2024-10-14T16:17:37.982Z [test] info: listening on port 5010
+2024-10-14T16:17:41.197Z [test] error: Status Code : undefined  - Error : Unknown column 'undefined' in 'field list'
+2024-10-14T16:17:59.559Z [test] info: listening on port 5010
+2024-10-14T16:18:00.038Z [test] error: Status Code : undefined  - Error : Unknown column 'undefined' in 'field list'
+2024-10-14T16:19:54.726Z [test] error: Status Code : undefined  - Error : Unknown column 'undefined' in 'field list'
+2024-10-14T16:20:05.370Z [test] info: listening on port 5010
+2024-10-14T16:20:08.992Z [test] error: Status Code : undefined  - Error : Unknown column 'undefined' in 'field list'
+2024-10-14T16:23:23.126Z [test] error: Status Code : undefined  - Error : Unknown column 'undefined' in 'field list'
+2024-10-14T16:23:24.875Z [test] error: Status Code : undefined  - Error : Unknown column 'undefined' in 'field list'
+2024-10-14T16:23:35.725Z [test] info: listening on port 5010
+2024-10-14T16:23:39.138Z [test] error: Status Code : undefined  - Error : Unknown column 'undefined' in 'field list'
+2024-10-14T16:23:50.437Z [test] info: listening on port 5010
+2024-10-14T16:27:25.993Z [test] info: listening on port 5010

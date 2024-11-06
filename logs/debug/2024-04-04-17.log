@@ -1,0 +1,4 @@
+2024-04-04T12:02:57.021Z [test] error: Deadlock found when trying to get lock; try restarting transaction
+2024-04-04T12:11:35.375Z [test] info: listening on port 5010
+2024-04-04T12:17:59.998Z [test] info: listening on port 5010
+2024-04-04T12:23:52.975Z [test] info: listening on port 5010

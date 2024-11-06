@@ -1,0 +1,30 @@
+2023-10-27T11:38:02.675Z [test] error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UPDATE magodmis.ncprograms
+      SET Qtycut=Qtycut+1
+      WHERE NCId='undefined' at line 5
+2023-10-27T11:51:16.421Z [test] error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UPDATE magodmis.ncprograms
+      SET Qtycut=Qtycut+1
+      WHERE NCId='undefined' at line 5
+2023-10-27T11:53:32.703Z [test] error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UPDATE magodmis.ncprograms
+      SET Qtycut=Qtycut+1
+      WHERE NCId='334089'' at line 5
+2023-10-27T11:55:11.338Z [test] error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UPDATE magodmis.ncprograms
+      SET Qtycut=Qtycut+1
+      WHERE NCId='334089'' at line 5
+2023-10-27T11:57:10.404Z [test] error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UPDATE magodmis.ncprograms
+      SET Qtycut=Qtycut+1
+      WHERE Ncid='369629'' at line 5
+2023-10-27T12:01:06.018Z [test] error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UPDATE magodmis.ncprograms
+      SET Qtycut = Qtycut + 1
+      WHERE Ncid = 3696' at line 5
+2023-10-27T12:01:32.276Z [test] error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UPDATE magodmis.ncprograms
+      SET Qtycut = Qtycut + 1
+      WHERE Ncid = 3340' at line 5
+2023-10-27T12:02:08.517Z [test] error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UPDATE magodmis.ncprograms
+      SET Qtycut = Qtycut + 1
+      WHERE Ncid = 3340' at line 5
+2023-10-27T12:04:29.614Z [test] error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UPDATE magodmis.ncprograms
+      SET Qtycut = Qtycut + 1
+      WHERE Ncid = 3340' at line 4
+2023-10-27T12:07:41.160Z [test] error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UPDATE magodmis.ncprograms
+      SET Qtycut = undefined + 1
+      WHERE Ncid = 3' at line 5

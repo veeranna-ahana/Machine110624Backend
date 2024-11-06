@@ -1,0 +1,7 @@
+2023-11-07T12:30:31.650Z [test] error: Duplicate entry '""' for key 'machinestatus.PRIMARY'
+2023-11-07T12:32:04.673Z [test] error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Cut','195479 01 03','34','','','','Not Defined',now(),'0',now(),0)' at line 2
+2023-11-07T12:36:41.912Z [test] error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Cut','195479 01 03','34','','','','Not Defined',now(),'0',now(),0)' at line 2
+2023-11-07T12:37:38.659Z [test] error: Duplicate entry 'Laser 11' for key 'machinestatus.PRIMARY'
+2023-11-07T12:37:47.405Z [test] error: Duplicate entry 'Laser 11' for key 'machinestatus.PRIMARY'
+2023-11-07T13:00:01.075Z [test] error: Duplicate entry 'Laser 11' for key 'machinestatus.PRIMARY'
+2023-11-07T13:00:35.290Z [test] error: Duplicate entry 'Laser 11' for key 'machinestatus.PRIMARY'

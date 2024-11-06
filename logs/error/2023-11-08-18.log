@@ -1,0 +1,10 @@
+2023-11-08T12:31:58.889Z [test] error: Incorrect integer value: 'undefined' for column 'ShiftID' at row 1
+2023-11-08T12:32:44.317Z [test] error: Incorrect integer value: 'undefined' for column 'StoppageID' at row 1
+2023-11-08T12:33:56.703Z [test] error: Incorrect integer value: 'undefined' for column 'StoppageID' at row 1
+2023-11-08T12:34:58.429Z [test] error: Incorrect integer value: 'undefined' for column 'StoppageID' at row 1
+2023-11-08T12:38:31.272Z [test] error: Column 'StoppageID' cannot be null
+2023-11-08T12:39:59.071Z [test] error: Column 'StoppageID' cannot be null
+2023-11-08T12:42:52.233Z [test] error: Incorrect integer value: 'undefined' for column 'StoppageID' at row 1
+2023-11-08T12:43:28.262Z [test] error: Incorrect integer value: 'undefined' for column 'StoppageID' at row 1
+2023-11-08T12:44:16.838Z [test] error: Incorrect integer value: 'undefined' for column 'StoppageID' at row 1
+2023-11-08T12:44:54.655Z [test] error: Incorrect integer value: 'undefined' for column 'StoppageID' at row 1

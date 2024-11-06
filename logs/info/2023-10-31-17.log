@@ -1,0 +1,15 @@
+2023-10-31T11:30:38.154Z [test] info: listening on port 5010
+2023-10-31T11:30:56.118Z [test] info: listening on port 5010
+2023-10-31T11:33:08.262Z [test] info: listening on port 5010
+2023-10-31T11:33:18.428Z [test] info: listening on port 5010
+2023-10-31T11:33:21.514Z [test] error: Truncated incorrect DOUBLE value: 'undefined'
+2023-10-31T11:33:38.641Z [test] info: listening on port 5010
+2023-10-31T11:33:47.059Z [test] error: Truncated incorrect DOUBLE value: 'undefined'
+2023-10-31T11:34:18.552Z [test] info: listening on port 5010
+2023-10-31T11:34:18.662Z [test] error: Truncated incorrect DOUBLE value: 'undefined'
+2023-10-31T11:34:22.771Z [test] info: listening on port 5010
+2023-10-31T11:34:31.390Z [test] error: Truncated incorrect DOUBLE value: 'undefined'
+2023-10-31T11:35:27.945Z [test] info: listening on port 5010
+2023-10-31T11:35:51.078Z [test] info: listening on port 5010
+2023-10-31T11:38:23.214Z [test] error: Truncated incorrect DOUBLE value: 'undefined'
+2023-10-31T11:38:42.315Z [test] error: Truncated incorrect DOUBLE value: 'undefined'

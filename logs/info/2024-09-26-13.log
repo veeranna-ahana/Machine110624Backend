@@ -1,0 +1,6 @@
+2024-09-26T08:05:11.632Z [test] info: listening on port 5010
+2024-09-26T08:08:34.904Z [test] error: Table 'magod_setup.menumapping' doesn't exist
+2024-09-26T08:09:30.807Z [test] info: listening on port 5010
+2024-09-26T08:09:31.105Z [test] error: Table 'magod_setup.menumapping' doesn't exist
+2024-09-26T08:10:02.528Z [test] info: listening on port 5010
+2024-09-26T08:18:01.363Z [test] error: Table 'magod_setup.menumapping' doesn't exist

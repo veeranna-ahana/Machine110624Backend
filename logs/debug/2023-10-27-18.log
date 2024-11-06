@@ -1,0 +1,8 @@
+2023-10-27T12:38:18.836Z [test] info: listening on port 5010
+2023-10-27T12:43:17.284Z [test] info: listening on port 5010
+2023-10-27T12:43:39.756Z [test] error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Laser 11'' at line 2
+2023-10-27T12:44:42.958Z [test] error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Laser 11'' at line 2
+2023-10-27T12:46:27.929Z [test] info: listening on port 5010
+2023-10-27T12:46:42.448Z [test] error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Laser 11'' at line 2
+2023-10-27T12:49:00.767Z [test] info: listening on port 5010
+2023-10-27T12:50:18.678Z [test] info: listening on port 5010

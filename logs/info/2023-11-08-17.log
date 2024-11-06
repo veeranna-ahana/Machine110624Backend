@@ -1,0 +1,16 @@
+2023-11-08T11:31:03.934Z [test] info: listening on port 5010
+2023-11-08T11:34:58.450Z [test] info: listening on port 5010
+2023-11-08T11:37:13.893Z [test] info: listening on port 5010
+2023-11-08T11:37:26.807Z [test] info: listening on port 5010
+2023-11-08T11:39:21.520Z [test] info: listening on port 5010
+2023-11-08T11:43:08.981Z [test] info: listening on port 5010
+2023-11-08T11:47:12.666Z [test] info: listening on port 5010
+2023-11-08T11:47:41.843Z [test] info: listening on port 5010
+2023-11-08T11:49:15.156Z [test] info: listening on port 5010
+2023-11-08T11:49:39.840Z [test] info: listening on port 5010
+2023-11-08T11:49:58.590Z [test] info: listening on port 5010
+2023-11-08T11:56:54.992Z [test] info: listening on port 5010
+2023-11-08T11:57:42.733Z [test] info: listening on port 5010
+2023-11-08T11:57:55.492Z [test] error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''Laser 11' at line 1
+2023-11-08T11:59:57.174Z [test] info: listening on port 5010
+2023-11-08T12:01:18.752Z [test] info: listening on port 5010

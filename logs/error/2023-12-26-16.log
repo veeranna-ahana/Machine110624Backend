@@ -1,0 +1,3 @@
+2023-12-26T10:56:19.847Z [test] error: Truncated incorrect DOUBLE value: 'undefined'
+2023-12-26T11:05:50.888Z [test] error: Truncated incorrect DOUBLE value: 'undefined'
+2023-12-26T11:08:33.653Z [test] error: You can't specify target table 's' for update in FROM clause

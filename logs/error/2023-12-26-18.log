@@ -1,0 +1,4 @@
+2023-12-26T12:39:36.769Z [test] error: Data too long for column 'RejectionReason' at row 1
+2023-12-26T12:39:51.865Z [test] error: Data too long for column 'RejectionReason' at row 1
+2023-12-26T12:40:58.543Z [test] error: Data too long for column 'RejectionReason' at row 1
+2023-12-26T12:41:24.264Z [test] error: Data too long for column 'RejectionReason' at row 1

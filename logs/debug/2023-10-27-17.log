@@ -1,0 +1,42 @@
+2023-10-27T11:38:02.675Z [test] error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UPDATE magodmis.ncprograms
+      SET Qtycut=Qtycut+1
+      WHERE NCId='undefined' at line 5
+2023-10-27T11:50:09.898Z [test] info: listening on port 5010
+2023-10-27T11:51:16.421Z [test] error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UPDATE magodmis.ncprograms
+      SET Qtycut=Qtycut+1
+      WHERE NCId='undefined' at line 5
+2023-10-27T11:53:32.517Z [test] info: listening on port 5010
+2023-10-27T11:53:32.703Z [test] error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UPDATE magodmis.ncprograms
+      SET Qtycut=Qtycut+1
+      WHERE NCId='334089'' at line 5
+2023-10-27T11:54:30.099Z [test] info: listening on port 5010
+2023-10-27T11:55:11.338Z [test] error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UPDATE magodmis.ncprograms
+      SET Qtycut=Qtycut+1
+      WHERE NCId='334089'' at line 5
+2023-10-27T11:56:39.499Z [test] info: listening on port 5010
+2023-10-27T11:57:10.404Z [test] error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UPDATE magodmis.ncprograms
+      SET Qtycut=Qtycut+1
+      WHERE Ncid='369629'' at line 5
+2023-10-27T12:00:49.297Z [test] info: listening on port 5010
+2023-10-27T12:01:06.018Z [test] error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UPDATE magodmis.ncprograms
+      SET Qtycut = Qtycut + 1
+      WHERE Ncid = 3696' at line 5
+2023-10-27T12:01:32.276Z [test] error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UPDATE magodmis.ncprograms
+      SET Qtycut = Qtycut + 1
+      WHERE Ncid = 3340' at line 5
+2023-10-27T12:02:08.517Z [test] error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UPDATE magodmis.ncprograms
+      SET Qtycut = Qtycut + 1
+      WHERE Ncid = 3340' at line 5
+2023-10-27T12:03:51.319Z [test] info: listening on port 5010
+2023-10-27T12:04:29.614Z [test] error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UPDATE magodmis.ncprograms
+      SET Qtycut = Qtycut + 1
+      WHERE Ncid = 3340' at line 4
+2023-10-27T12:07:08.313Z [test] info: listening on port 5010
+2023-10-27T12:07:17.793Z [test] info: listening on port 5010
+2023-10-27T12:07:41.160Z [test] error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UPDATE magodmis.ncprograms
+      SET Qtycut = undefined + 1
+      WHERE Ncid = 3' at line 5
+2023-10-27T12:10:13.140Z [test] info: listening on port 5010
+2023-10-27T12:19:44.536Z [test] info: listening on port 5010
+2023-10-27T12:21:15.415Z [test] info: listening on port 5010
+2023-10-27T12:29:11.871Z [test] info: listening on port 5010

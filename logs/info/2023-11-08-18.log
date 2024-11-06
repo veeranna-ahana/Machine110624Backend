@@ -1,0 +1,24 @@
+2023-11-08T12:31:32.339Z [test] info: listening on port 5010
+2023-11-08T12:31:58.889Z [test] error: Incorrect integer value: 'undefined' for column 'ShiftID' at row 1
+2023-11-08T12:32:38.494Z [test] info: listening on port 5010
+2023-11-08T12:32:44.317Z [test] error: Incorrect integer value: 'undefined' for column 'StoppageID' at row 1
+2023-11-08T12:33:49.254Z [test] info: listening on port 5010
+2023-11-08T12:33:56.703Z [test] error: Incorrect integer value: 'undefined' for column 'StoppageID' at row 1
+2023-11-08T12:34:45.644Z [test] info: listening on port 5010
+2023-11-08T12:34:58.429Z [test] error: Incorrect integer value: 'undefined' for column 'StoppageID' at row 1
+2023-11-08T12:38:24.418Z [test] info: listening on port 5010
+2023-11-08T12:38:31.272Z [test] error: Column 'StoppageID' cannot be null
+2023-11-08T12:39:51.802Z [test] info: listening on port 5010
+2023-11-08T12:39:59.071Z [test] error: Column 'StoppageID' cannot be null
+2023-11-08T12:42:20.205Z [test] info: listening on port 5010
+2023-11-08T12:42:44.789Z [test] info: listening on port 5010
+2023-11-08T12:42:52.233Z [test] error: Incorrect integer value: 'undefined' for column 'StoppageID' at row 1
+2023-11-08T12:43:21.662Z [test] info: listening on port 5010
+2023-11-08T12:43:28.262Z [test] error: Incorrect integer value: 'undefined' for column 'StoppageID' at row 1
+2023-11-08T12:44:05.237Z [test] info: listening on port 5010
+2023-11-08T12:44:16.838Z [test] error: Incorrect integer value: 'undefined' for column 'StoppageID' at row 1
+2023-11-08T12:44:47.033Z [test] info: listening on port 5010
+2023-11-08T12:44:54.655Z [test] error: Incorrect integer value: 'undefined' for column 'StoppageID' at row 1
+2023-11-08T12:46:20.844Z [test] info: listening on port 5010
+2023-11-08T12:46:27.277Z [test] info: listening on port 5010
+2023-11-08T12:48:56.792Z [test] info: listening on port 5010

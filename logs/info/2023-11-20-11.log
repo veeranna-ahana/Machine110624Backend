@@ -1,0 +1,17 @@
+2023-11-20T05:52:32.278Z [test] info: listening on port 5010
+2023-11-20T05:56:44.858Z [test] info: listening on port 5010
+2023-11-20T05:57:01.382Z [test] info: listening on port 5010
+2023-11-20T05:57:33.080Z [test] error: Cannot read properties of undefined (reading 'Machine')
+2023-11-20T06:00:39.086Z [test] info: listening on port 5010
+2023-11-20T06:01:59.697Z [test] info: listening on port 5010
+2023-11-20T06:02:06.226Z [test] info: listening on port 5010
+2023-11-20T06:02:24.215Z [test] info: listening on port 5010
+2023-11-20T06:02:53.870Z [test] info: listening on port 5010
+2023-11-20T06:06:47.397Z [test] info: listening on port 5010
+2023-11-20T06:09:10.723Z [test] info: listening on port 5010
+2023-11-20T06:09:45.975Z [test] info: listening on port 5010
+2023-11-20T06:09:59.077Z [test] info: listening on port 5010
+2023-11-20T06:15:23.576Z [test] error: Status Code : undefined  - Error : Cannot read properties of undefined (reading 'Machine')
+2023-11-20T06:15:49.253Z [test] error: Status Code : undefined  - Error : Cannot read properties of undefined (reading 'Machine')
+2023-11-20T06:20:24.272Z [test] info: listening on port 5010
+2023-11-20T06:24:51.668Z [test] info: listening on port 5010

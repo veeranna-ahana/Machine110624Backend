@@ -1,0 +1,19 @@
+2023-12-26T10:56:09.661Z [test] info: listening on port 5010
+2023-12-26T10:56:19.847Z [test] error: Truncated incorrect DOUBLE value: 'undefined'
+2023-12-26T11:05:45.092Z [test] info: listening on port 5010
+2023-12-26T11:05:50.888Z [test] error: Truncated incorrect DOUBLE value: 'undefined'
+2023-12-26T11:06:05.403Z [test] info: listening on port 5010
+2023-12-26T11:08:26.517Z [test] info: listening on port 5010
+2023-12-26T11:08:33.653Z [test] error: You can't specify target table 's' for update in FROM clause
+2023-12-26T11:11:49.261Z [test] info: listening on port 5010
+2023-12-26T11:11:57.394Z [test] info: listening on port 5010
+2023-12-26T11:16:56.786Z [test] info: listening on port 5010
+2023-12-26T11:17:21.774Z [test] info: listening on port 5010
+2023-12-26T11:22:00.810Z [test] info: listening on port 5010
+2023-12-26T11:23:19.145Z [test] info: listening on port 5010
+2023-12-26T11:27:56.947Z [test] info: listening on port 5010
+2023-12-26T11:28:02.668Z [test] info: listening on port 5010
+2023-12-26T11:28:05.825Z [test] info: listening on port 5010
+2023-12-26T11:28:10.336Z [test] info: listening on port 5010
+2023-12-26T11:28:16.912Z [test] info: listening on port 5010
+2023-12-26T11:28:19.989Z [test] info: listening on port 5010

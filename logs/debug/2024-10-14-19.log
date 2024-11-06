@@ -1,0 +1,10 @@
+2024-10-14T13:49:55.057Z [test] info: listening on port 5010
+2024-10-14T14:00:42.151Z [test] error: Status Code : undefined  - Error : You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ', s.Status='Closed'' at line 3
+2024-10-14T14:01:01.675Z [test] info: listening on port 5010
+2024-10-14T14:01:15.460Z [test] info: listening on port 5010
+2024-10-14T14:04:40.332Z [test] info: listening on port 5010
+2024-10-14T14:12:00.895Z [test] info: listening on port 5010
+2024-10-14T14:12:02.031Z [test] error: Status Code : undefined  - Error : You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ', s.Status='Closed'' at line 3
+2024-10-14T14:12:47.440Z [test] info: listening on port 5010
+2024-10-14T14:14:46.949Z [test] info: listening on port 5010
+2024-10-14T14:24:33.557Z [test] info: listening on port 5010

@@ -1,0 +1,25 @@
+2024-10-23T10:30:12.482Z [test] error: Truncated incorrect DOUBLE value: 'remarks'
+2024-10-23T10:30:26.545Z [test] error: Truncated incorrect DOUBLE value: 'remarks'
+2024-10-23T10:32:06.632Z [test] error: Truncated incorrect DOUBLE value: 'new remarks'
+2024-10-23T10:32:06.633Z [test] error: Truncated incorrect DOUBLE value: 'null'
+2024-10-23T10:32:06.634Z [test] error: Truncated incorrect DOUBLE value: 'null'
+2024-10-23T10:32:06.634Z [test] error: Truncated incorrect DOUBLE value: 'null'
+2024-10-23T10:32:06.635Z [test] error: Truncated incorrect DOUBLE value: 'null'
+2024-10-23T10:32:06.636Z [test] error: Truncated incorrect DOUBLE value: 'null'
+2024-10-23T10:32:06.637Z [test] error: Truncated incorrect DOUBLE value: 'null'
+2024-10-23T10:32:18.745Z [test] error: Truncated incorrect DOUBLE value: 'new remarks'
+2024-10-23T10:32:18.746Z [test] error: Truncated incorrect DOUBLE value: 'null'
+2024-10-23T10:32:18.751Z [test] error: Truncated incorrect DOUBLE value: 'null'
+2024-10-23T10:32:18.752Z [test] error: Truncated incorrect DOUBLE value: 'null'
+2024-10-23T10:32:18.753Z [test] error: Truncated incorrect DOUBLE value: 'null'
+2024-10-23T10:32:18.754Z [test] error: Truncated incorrect DOUBLE value: 'null'
+2024-10-23T10:32:18.754Z [test] error: Truncated incorrect DOUBLE value: 'null'
+2024-10-23T10:45:10.324Z [test] error: Truncated incorrect DOUBLE value: 'remarks'
+2024-10-23T10:45:17.294Z [test] error: Truncated incorrect DOUBLE value: 'remarks'
+2024-10-23T10:45:28.568Z [test] error: Truncated incorrect DOUBLE value: 'remarks'
+2024-10-23T11:04:47.879Z [test] error: Status Code : undefined  - Error : Cannot read properties of undefined (reading 'issuesets')
+2024-10-23T11:06:16.798Z [test] info: listening on port 5010
+2024-10-23T11:06:18.322Z [test] info: listening on port 5010
+2024-10-23T11:22:41.088Z [test] info: listening on port 5010
+2024-10-23T11:26:03.146Z [test] info: listening on port 5010
+2024-10-23T11:27:42.378Z [test] info: listening on port 5010

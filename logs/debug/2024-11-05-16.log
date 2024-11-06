@@ -1,0 +1,46 @@
+2024-11-05T10:54:21.279Z [test] error: Truncated incorrect DOUBLE value: 'rejected'
+2024-11-05T10:54:21.294Z [test] error: Truncated incorrect DOUBLE value: 'null'
+2024-11-05T10:54:21.296Z [test] error: Truncated incorrect DOUBLE value: 'null'
+2024-11-05T10:54:21.297Z [test] error: Truncated incorrect DOUBLE value: 'null'
+2024-11-05T10:54:21.298Z [test] error: Truncated incorrect DOUBLE value: 'null'
+2024-11-05T10:54:21.298Z [test] error: Truncated incorrect DOUBLE value: 'null'
+2024-11-05T10:54:21.299Z [test] error: Truncated incorrect DOUBLE value: 'null'
+2024-11-05T10:54:21.300Z [test] error: Truncated incorrect DOUBLE value: 'null'
+2024-11-05T10:54:21.302Z [test] error: Truncated incorrect DOUBLE value: 'null'
+2024-11-05T10:54:21.302Z [test] error: Truncated incorrect DOUBLE value: 'null'
+2024-11-05T10:54:21.303Z [test] error: Truncated incorrect DOUBLE value: 'null'
+2024-11-05T10:57:37.298Z [test] info: listening on port 5010
+2024-11-05T10:57:50.762Z [test] info: listening on port 5010
+2024-11-05T10:58:14.134Z [test] info: listening on port 5010
+2024-11-05T10:58:42.379Z [test] info: listening on port 5010
+2024-11-05T10:58:53.823Z [test] error: Truncated incorrect DOUBLE value: 'rejected'
+2024-11-05T10:58:53.827Z [test] error: Truncated incorrect DOUBLE value: 'null'
+2024-11-05T10:58:53.829Z [test] error: Truncated incorrect DOUBLE value: 'null'
+2024-11-05T10:58:53.830Z [test] error: Truncated incorrect DOUBLE value: 'null'
+2024-11-05T10:58:53.831Z [test] error: Truncated incorrect DOUBLE value: 'null'
+2024-11-05T10:58:53.832Z [test] error: Truncated incorrect DOUBLE value: 'null'
+2024-11-05T10:58:53.833Z [test] error: Truncated incorrect DOUBLE value: 'null'
+2024-11-05T10:58:53.834Z [test] error: Truncated incorrect DOUBLE value: 'null'
+2024-11-05T10:58:53.835Z [test] error: Truncated incorrect DOUBLE value: 'null'
+2024-11-05T10:58:53.836Z [test] error: Truncated incorrect DOUBLE value: 'null'
+2024-11-05T10:58:53.837Z [test] error: Truncated incorrect DOUBLE value: 'null'
+2024-11-05T10:59:30.768Z [test] info: listening on port 5010
+2024-11-05T10:59:36.078Z [test] info: listening on port 5010
+2024-11-05T11:04:10.919Z [test] info: listening on port 5010
+2024-11-05T11:04:18.856Z [test] error: Incorrect integer value: 'undefined' for column 'QtyCut' at row 1
+2024-11-05T11:04:18.983Z [test] error: Incorrect integer value: 'undefined' for column 'QtyCut' at row 1
+2024-11-05T11:04:18.985Z [test] error: Incorrect integer value: 'undefined' for column 'QtyCut' at row 1
+2024-11-05T11:04:18.986Z [test] error: Incorrect integer value: 'undefined' for column 'QtyCut' at row 1
+2024-11-05T11:04:18.987Z [test] error: Incorrect integer value: 'undefined' for column 'QtyCut' at row 1
+2024-11-05T11:04:18.988Z [test] error: Incorrect integer value: 'undefined' for column 'QtyCut' at row 1
+2024-11-05T11:04:18.989Z [test] error: Incorrect integer value: 'undefined' for column 'QtyCut' at row 1
+2024-11-05T11:04:18.990Z [test] error: Incorrect integer value: 'undefined' for column 'QtyCut' at row 1
+2024-11-05T11:04:18.991Z [test] error: Incorrect integer value: 'undefined' for column 'QtyCut' at row 1
+2024-11-05T11:04:18.992Z [test] error: Incorrect integer value: 'undefined' for column 'QtyCut' at row 1
+2024-11-05T11:06:36.054Z [test] info: listening on port 5010
+2024-11-05T11:07:08.307Z [test] info: listening on port 5010
+2024-11-05T11:08:10.958Z [test] info: listening on port 5010
+2024-11-05T11:08:14.318Z [test] info: listening on port 5010
+2024-11-05T11:08:54.542Z [test] info: listening on port 5010
+2024-11-05T11:09:26.976Z [test] error: Status Code : undefined  - Error : QtyCut is not defined
+2024-11-05T11:09:53.097Z [test] info: listening on port 5010

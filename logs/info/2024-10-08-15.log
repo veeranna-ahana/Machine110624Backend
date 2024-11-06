@@ -1,0 +1,6 @@
+2024-10-08T09:40:57.505Z [test] error: Incorrect integer value: '' for column 'QtyRejected' at row 1
+2024-10-08T09:55:42.306Z [test] error: Incorrect integer value: '' for column 'QtyRejected' at row 1
+2024-10-08T09:58:07.794Z [test] error: Incorrect integer value: '' for column 'QtyRejected' at row 1
+2024-10-08T09:59:32.403Z [test] info: Login Success - adminuser
+2024-10-08T10:00:38.367Z [test] error: Incorrect integer value: '' for column 'QtyRejected' at row 1
+2024-10-08T10:01:43.671Z [test] error: Incorrect integer value: '' for column 'QtyRejected' at row 1

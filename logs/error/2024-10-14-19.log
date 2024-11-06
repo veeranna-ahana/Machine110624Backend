@@ -1,0 +1,2 @@
+2024-10-14T14:00:42.151Z [test] error: Status Code : undefined  - Error : You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ', s.Status='Closed'' at line 3
+2024-10-14T14:12:02.031Z [test] error: Status Code : undefined  - Error : You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ', s.Status='Closed'' at line 3
