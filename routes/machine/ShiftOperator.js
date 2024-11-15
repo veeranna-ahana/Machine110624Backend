@@ -13,6 +13,7 @@ var bodyParser = require("body-parser");
 const moment = require("moment");
 const nodemailer = require('nodemailer');
 const { response } = require("express");
+const { Console } = require("winston/lib/winston/transports");
 
 // create application/json parser
 var jsonParser = bodyParser.json();
@@ -33,9 +34,61 @@ ShiftOperator.get("/getallMachines", async (req, res, next) => {
   }
 });
 
+
+// ShiftOperator.post("/getCurrentShiftDetails", async (req, res, next) => {
+//   try {
+//     const now = new Date();
+//     // Get current date and time
+//     const currentDate = new Date().toISOString().slice(0, 10); // Format as 'YYYY-MM-DD'
+//     const currentDateTime = `${now.toISOString().slice(0, 10)} ${now.toTimeString().split(' ')[0]}`;
+
+
+//     // Define the SQL query to get shifts for the current date
+//     const query = `
+//       SELECT *
+//       FROM magodmis.day_shiftregister
+//       WHERE ShiftDate = '${currentDate}';
+//     `;
+
+//     // Execute the query
+//     misQueryMod(query, (err, data) => {
+//       if (err) {
+//         logger.error(err);
+//         return res.status(500).send("Internal Server Error");
+//       }
+
+
+//       if (!data || data.length === 0) {
+//         // If no data is found for the current date, return a message
+//         return res.send("No shift data available for the current date.");
+//       }
+
+//       // Filter data to find entries where the current time is within fromtime and totime
+//       const currentShiftData = data.filter((shift) => {
+//         const fromTime = shift.FromTime;
+//         const toTime = shift.ToTime;
+
+//         // console.log("fromTime is",fromTime);
+//         // console.log("toTime  is",toTime);
+//         // Check if the current time falls within fromtime and totime range
+//         return currentDateTime >= fromTime && currentDateTime <= toTime;
+//       });
+
+//       // Send the resulting data or a message if no matching shift is found
+//       if (currentShiftData.length > 0) {
+//         res.send(currentShiftData);
+//       } else {
+//         res.send("No current shift matches the time range.");
+//       }
+//     });
+//   } catch (error) {
+//     next(error);
+//   }
+// });
+
+
 //get Shift Details
 ShiftOperator.post("/getShiftDetails", jsonParser, async (req, res, next) => {
-  console.log("getShiftDetails",req.body);
   try {
     const { refName, ShiftDate, Shift } = req.body;
     misQueryMod(
