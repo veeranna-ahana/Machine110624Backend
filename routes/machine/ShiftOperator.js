@@ -11,7 +11,7 @@ const {
 const { logger } = require("../../helpers/logger");
 var bodyParser = require("body-parser");
 const moment = require("moment");
-const nodemailer = require('nodemailer');
+const nodemailer = require("nodemailer");
 const { response } = require("express");
 const { Console } = require("winston/lib/winston/transports");
 
@@ -34,14 +34,12 @@ ShiftOperator.get("/getallMachines", async (req, res, next) => {
   }
 });
 
-
 // ShiftOperator.post("/getCurrentShiftDetails", async (req, res, next) => {
 //   try {
 //     const now = new Date();
 //     // Get current date and time
 //     const currentDate = new Date().toISOString().slice(0, 10); // Format as 'YYYY-MM-DD'
 //     const currentDateTime = `${now.toISOString().slice(0, 10)} ${now.toTimeString().split(' ')[0]}`;
-
 
 //     // Define the SQL query to get shifts for the current date
 //     const query = `
@@ -56,7 +54,6 @@ ShiftOperator.get("/getallMachines", async (req, res, next) => {
 //         logger.error(err);
 //         return res.status(500).send("Internal Server Error");
 //       }
-
 
 //       if (!data || data.length === 0) {
 //         // If no data is found for the current date, return a message
@@ -86,25 +83,74 @@ ShiftOperator.get("/getallMachines", async (req, res, next) => {
 //   }
 // });
 
-
 //get Shift Details
+// ShiftOperator.post("/getShiftDetails", jsonParser, async (req, res, next) => {
+//   try {
+//     const { refName, ShiftDate, Shift } = req.body;
+//     misQueryMod(
+//       `Select *
+//         from magodmis.shiftregister where Machine='${req.body.refName}' and ShiftDate='${req.body.ShiftDate}' and (Shift='${Shift}' OR Shift='General' OR Shift='Special')`,
+//       (err, data) => {
+//         if (err) logger.error(err);
+//         // console.log(data)
+//         res.send(data);
+//       }
+//     );
+//   } catch (error) {
+//     next(error);
+//   }
+//   // res.send(res)
+// });
+
 ShiftOperator.post("/getShiftDetails", jsonParser, async (req, res, next) => {
   try {
     const { refName, ShiftDate, Shift } = req.body;
+
+    // Query to fetch data from the database
     misQueryMod(
       `Select *   
         from magodmis.shiftregister where Machine='${req.body.refName}' and ShiftDate='${req.body.ShiftDate}' and (Shift='${Shift}' OR Shift='General' OR Shift='Special')`,
       (err, data) => {
-        if (err) logger.error(err);
-        // console.log(data)
-        res.send(data);
+        if (err) {
+          logger.error(err);
+          return res.status(500).send({ error: "Database query failed" });
+        }
+
+        // Format FromTime and ToTime in the desired format
+        const formattedData = data.map((item) => {
+          item.FromTime = formatDateTime(item.FromTime); // Format FromTime
+          item.ToTime = formatDateTime(item.ToTime); // Format ToTime
+          return item;
+        });
+
+        // Send the formatted response
+        res.send(formattedData);
       }
     );
   } catch (error) {
     next(error);
   }
-  // res.send(res)
 });
+
+// Function to format date and time in dd/mm/yyyy hh:mm:ss
+const formatDateTime = (dateTimeString) => {
+  if (!dateTimeString) return ""; // Handle undefined or null input
+
+  // Create a Date object from the string
+  const date = new Date(dateTimeString);
+  if (isNaN(date)) return "Invalid Date"; // Handle invalid date strings
+
+  // Extract day, month, year, hour, minute, and second
+  const day = String(date.getDate()).padStart(2, "0");
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const year = date.getFullYear();
+  const hours = String(date.getHours()).padStart(2, "0");
+  const minutes = String(date.getMinutes()).padStart(2, "0");
+  const seconds = String(date.getSeconds()).padStart(2, "0");
+
+  // Return the formatted string in the desired format
+  return `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
+};
 
 ShiftOperator.post("/getProcessDetails", jsonParser, async (req, res, next) => {
   // console.log(req.body);
@@ -193,8 +239,6 @@ ShiftOperator.post("/ProcessTaskStatus", jsonParser, async (req, res, next) => {
 //   }
 // });
 
-
-
 ShiftOperator.post("/errorForm", jsonParser, async (req, res, next) => {
   // console.log(req.body,"/error form");
   try {
@@ -271,8 +315,6 @@ ShiftOperator.post("/errorForm", jsonParser, async (req, res, next) => {
   }
 });
 
-
-
 ///SHIFT SUMMARY
 ShiftOperator.post("/ShiftSummary", jsonParser, async (req, res, next) => {
   // console.log('required shiftid is', req.body.selectshifttable.ShiftID);
@@ -297,8 +339,6 @@ ShiftOperator.post("/ShiftSummary", jsonParser, async (req, res, next) => {
     next(error);
   }
 });
-
-
 
 //Stoppage Reason List
 ShiftOperator.get("/stoppageList", jsonParser, async (req, res, next) => {
@@ -445,7 +485,6 @@ ShiftOperator.post("/addStoppage", jsonParser, async (req, res, next) => {
     res.status(500).send("Internal Server Error");
   }
 });
-
 
 //ADD stoppage with Task No for Internal Production
 ShiftOperator.post("/addStoppageTaskNo", jsonParser, async (req, res, next) => {
@@ -629,7 +668,6 @@ ShiftOperator.post(
   "/MachineTasksService",
   jsonParser,
   async (req, res, next) => {
-
     // Step 1: Execute the first query
     const firstQuery = `
     SELECT *
@@ -686,7 +724,6 @@ ShiftOperator.post(
   }
 );
 
-
 //MARK AS USED PROGRAM MATERIAL
 ShiftOperator.post(
   "/markAsUsedProgramMaterial",
@@ -696,7 +733,9 @@ ShiftOperator.post(
       const { selectedMtrlTable, selectedMachine, formdata } = req.body;
 
       // Determine if the operation contains "Tube Cutting"
-      const isTubeCutting = formdata.Operation.toLowerCase().includes('tube cutting'.toLowerCase());
+      const isTubeCutting = formdata.Operation.toLowerCase().includes(
+        "tube cutting".toLowerCase()
+      );
 
       // Iterate over each row in selectedMtrlTable
       for (const row of selectedMtrlTable) {
@@ -757,14 +796,11 @@ ShiftOperator.post(
   }
 );
 
-
-
 //MARK AS REJECTED PROGRAM MATERIAL
 ShiftOperator.post(
   "/markAsRejectedProgramMaterial",
   jsonParser,
   async (req, res, next) => {
-
     try {
       const { RejectedReason, selectedMtrlTable } = req.body;
 
@@ -793,7 +829,6 @@ ShiftOperator.post(
     }
   }
 );
-
 
 //LoadMaterial Profile
 ShiftOperator.post("/loadMaterial", jsonParser, async (req, res, next) => {
@@ -828,7 +863,6 @@ ShiftOperator.post("/loadMaterial", jsonParser, async (req, res, next) => {
     res.status(500).send("Internal Server Error");
   }
 });
-
 
 //load program
 ShiftOperator.post("/loadProgram", jsonParser, async (req, res, next) => {
@@ -919,7 +953,6 @@ ShiftOperator.post("/loadProgram", jsonParser, async (req, res, next) => {
   }
 });
 
-
 ///Used Production Report
 ShiftOperator.post(
   "/markAsUsedProductionReport",
@@ -928,10 +961,14 @@ ShiftOperator.post(
     try {
       // Start a database transaction
       await executeQuery("START TRANSACTION");
-      const { selectdefaultRow, selectedMachine, selectProductionReport } = req.body;
+      const { selectdefaultRow, selectedMachine, selectProductionReport } =
+        req.body;
 
       // Check if 'Operation' contains 'Tube Cutting'
-      const isTubeCutting = selectProductionReport.Operation?.toLowerCase().includes('tube cutting');
+      const isTubeCutting =
+        selectProductionReport.Operation?.toLowerCase().includes(
+          "tube cutting"
+        );
 
       // Ensure selectdefaultRow is an array
       if (!Array.isArray(selectdefaultRow) || selectdefaultRow.length === 0) {
@@ -943,7 +980,9 @@ ShiftOperator.post(
 
         // Check if essential values are defined
         if (!NcPgmMtrlId || !NcID) {
-          throw new Error(`Missing NcPgmMtrlId or NcID in row: ${JSON.stringify(selectedRow)}`);
+          throw new Error(
+            `Missing NcPgmMtrlId or NcID in row: ${JSON.stringify(selectedRow)}`
+          );
         }
 
         // First Query
@@ -989,14 +1028,11 @@ ShiftOperator.post(
   }
 );
 
-
-
 // ////Reject Production Report
 ShiftOperator.post(
   "/markAsRejectedProductionReport",
   jsonParser,
   async (req, res, next) => {
-
     try {
       const { RejectedReason, selectdefaultRow } = req.body;
 
@@ -1099,13 +1135,13 @@ ShiftOperator.post("/getprogramParts", jsonParser, async (req, res, next) => {
 
 ////Proram Parts(MiddleSection)
 ShiftOperator.post("/SaveprogramParts", jsonParser, async (req, res, next) => {
-  console.log("req.body",req.body);
   try {
     const programPartsData = req.body.programPartsData;
     const responses = [];
 
     for (const part of programPartsData) {
-      const { NC_Pgme_Part_ID, QtyRejected, Remarks, processnow,QtyCut } = part;
+      const { NC_Pgme_Part_ID, QtyRejected, Remarks, processnow, QtyCut } =
+        part;
 
       // Skip execution if processnow is 0 or undefined
       if (!processnow || processnow === 0) {
@@ -1130,7 +1166,11 @@ ShiftOperator.post("/SaveprogramParts", jsonParser, async (req, res, next) => {
         }
 
         // Check if all queries have been handled
-        if (responses.length === programPartsData.filter(p => p.processnow && p.processnow !== 0).length) {
+        if (
+          responses.length ===
+          programPartsData.filter((p) => p.processnow && p.processnow !== 0)
+            .length
+        ) {
           res.send(responses);
         }
       });
@@ -1140,30 +1180,32 @@ ShiftOperator.post("/SaveprogramParts", jsonParser, async (req, res, next) => {
   }
 });
 
-
 //Program  Reports Part Details Save Button
-ShiftOperator.post("/SaveprogramDetails", jsonParser, async (req, res, next) => {
-  // console.log("SaveprogramDetails is",req.body);
-  try {
-    const partDetailsData = req.body.partDetailsData;
+ShiftOperator.post(
+  "/SaveprogramDetails",
+  jsonParser,
+  async (req, res, next) => {
+    // console.log("SaveprogramDetails is",req.body);
+    try {
+      const partDetailsData = req.body.partDetailsData;
 
-    // Iterate over each element in partDetailsData
-    for (const part of partDetailsData) {
-      const NC_Pgme_part_ID = part.nc_pgme_part_id;
-      const QtyRejected = part.QtyRejected;
-      const Remarks = part.Remarks;
+      // Iterate over each element in partDetailsData
+      for (const part of partDetailsData) {
+        const NC_Pgme_part_ID = part.nc_pgme_part_id;
+        const QtyRejected = part.QtyRejected;
+        const Remarks = part.Remarks;
 
-      // Update Magodmis.Ncprogram_partslist for each element
-      await mchQueryMod1(`
+        // Update Magodmis.Ncprogram_partslist for each element
+        await mchQueryMod1(`
         UPDATE Magodmis.Ncprogram_partslist
         SET QtyRejected = '${QtyRejected}',
             Remarks='${Remarks}'
         WHERE NC_Pgme_part_Id='${NC_Pgme_part_ID}';
       `);
-    }
+      }
 
-    // Additional Step: Update magodmis.ncprograms
-    const updateNcProgramsQuery = `
+      // Additional Step: Update magodmis.ncprograms
+      const updateNcProgramsQuery = `
       UPDATE magodmis.ncprograms n
       JOIN (
         SELECT n.Ncid, SUM(TIMESTAMPDIFF(MINUTE, s.FromTime, s.ToTime)) AS MachineTime 
@@ -1177,16 +1219,16 @@ ShiftOperator.post("/SaveprogramDetails", jsonParser, async (req, res, next) => 
       SET n.ActualTime = A.MachineTime
       WHERE A.ncid = n.Ncid;`;
 
-    // Execute the updateNcProgramsQuery
-    await mchQueryMod1(updateNcProgramsQuery);
+      // Execute the updateNcProgramsQuery
+      await mchQueryMod1(updateNcProgramsQuery);
 
-    res.send("Successfully updated program details");
-  } catch (error) {
-    console.error(error);
-    res.status(500).send("Internal Server Error");
+      res.send("Successfully updated program details");
+    } catch (error) {
+      console.error(error);
+      res.status(500).send("Internal Server Error");
+    }
   }
-});
-
+);
 
 /////Mark as Completed
 ShiftOperator.post("/programCompleted", jsonParser, async (req, res, next) => {
@@ -1689,7 +1731,7 @@ ShiftOperator.post("/updateOperator", jsonParser, async (req, res, next) => {
       (err, data) => {
         if (err) {
           logger.error(err);
-          return res.status(500).send('Internal Server Error');
+          return res.status(500).send("Internal Server Error");
         } else {
           // Update magodmis.shiftlogbook
           mchQueryMod(
@@ -1697,7 +1739,7 @@ ShiftOperator.post("/updateOperator", jsonParser, async (req, res, next) => {
             (err, data) => {
               if (err) {
                 logger.error(err);
-                return res.status(500).send('Internal Server Error');
+                return res.status(500).send("Internal Server Error");
               } else {
                 // Update magodmis.shiftregister
                 mchQueryMod(
@@ -1705,7 +1747,7 @@ ShiftOperator.post("/updateOperator", jsonParser, async (req, res, next) => {
                   (err, data) => {
                     if (err) {
                       logger.error(err);
-                      return res.status(500).send('Internal Server Error');
+                      return res.status(500).send("Internal Server Error");
                     } else {
                       res.send(data);
                     }
@@ -1721,8 +1763,6 @@ ShiftOperator.post("/updateOperator", jsonParser, async (req, res, next) => {
     next(error);
   }
 });
-
-
 
 //openShiftLog Modal
 ShiftOperator.post("/getRowCounts", jsonParser, async (req, res, next) => {
@@ -1911,8 +1951,6 @@ function calculateRunningTime(toTime, fromTime) {
   // For example: return the difference between toTime and fromTime
 }
 
-
-
 //Middle table(Program Material) DataRefresh Data
 ShiftOperator.post(
   "/ProgramMaterialAfterRefresh",
@@ -2060,7 +2098,6 @@ ShiftOperator.post("/getNcProgramId", jsonParser, async (req, res, next) => {
   }
 });
 
-
 ShiftOperator.post("/ServicemarkasUsed", jsonParser, async (req, res, next) => {
   try {
     const { sendobject } = req.body;
@@ -2097,13 +2134,11 @@ ShiftOperator.post("/ServicemarkasUsed", jsonParser, async (req, res, next) => {
     await executeUpdateQuery(updateQuery2);
     await executeUpdateQuery(updateQuery3);
 
-
-
     // Now execute updateQuery4 once using the aggregated issuesetsNumber
     let updateQuery4 = `UPDATE magodmis.shopfloor_part_issueregister s
                         SET s.QtyUsed=s.QtyUsed+${sendobject[0].issuesets}`;
 
-                        console.log("updateQuery4 is",updateQuery4);
+    console.log("updateQuery4 is", updateQuery4);
 
     // Check if any of the objects have QtyIssued === QtyUsed and update the status
     if (sendobject.some((obj) => obj.QtyIssued === obj.QtyUsed)) {
@@ -2123,7 +2158,6 @@ ShiftOperator.post("/ServicemarkasUsed", jsonParser, async (req, res, next) => {
   }
 });
 
-
 // Function to execute an update query
 function executeUpdateQuery(query) {
   return new Promise((resolve, reject) => {
@@ -2138,13 +2172,11 @@ function executeUpdateQuery(query) {
   });
 }
 
-
-
 //mark as Rejected Production Report
 ShiftOperator.post("/markasReturned", jsonParser, async (req, res, next) => {
   try {
     const { sendobject } = req.body;
-    console.log("sendobject",sendobject);
+    console.log("sendobject", sendobject);
 
     // Disable safe updates for the current session
     await executeUpdateQuery("SET SQL_SAFE_UPDATES = 0");
@@ -2162,7 +2194,7 @@ ShiftOperator.post("/markasReturned", jsonParser, async (req, res, next) => {
 
       // Execute the first query
       await executeUpdateQuery(updateQuery1);
-      console.log("updateQuery1 is",updateQuery1);
+      console.log("updateQuery1 is", updateQuery1);
 
       // Aggregate issuesetsNumber and store IV_ID for later use
       totalIssuesetsNumber += Number(obj.issuesets);
@@ -2170,8 +2202,8 @@ ShiftOperator.post("/markasReturned", jsonParser, async (req, res, next) => {
 
       // Check if the additional query is needed (close status)
       // if (obj.QtyIssued === obj.QtyUsed + obj.QtyReturned) {
-      //   let closeQuery = `UPDATE magodmis.shopfloor_part_issueregister s 
-      //                     SET s.Status='Closed' 
+      //   let closeQuery = `UPDATE magodmis.shopfloor_part_issueregister s
+      //                     SET s.Status='Closed'
       //                     WHERE s.IssueID=${obj.IV_ID};`;
       //   await executeUpdateQuery(closeQuery);
       // }
@@ -2186,7 +2218,6 @@ ShiftOperator.post("/markasReturned", jsonParser, async (req, res, next) => {
       let updateQuery4 = `UPDATE magodmis.shopfloor_part_issueregister s 
                           SET s.QtyReturned=s.QtyReturned+${sendobject[0].ReturnNow} 
                           WHERE s.IssueID=${sendobject[0].IV_ID};`;
-
 
       // Execute the fourth query outside the loop
       await executeUpdateQuery(updateQuery4);
@@ -2207,7 +2238,7 @@ function executeUpdateQuery(query) {
   return new Promise((resolve, reject) => {
     misQueryMod(query, (err, result) => {
       if (err) {
-        console.error("Query execution error:", err); 
+        console.error("Query execution error:", err);
         reject(err);
       } else {
         resolve(result);
@@ -2215,9 +2246,6 @@ function executeUpdateQuery(query) {
     });
   });
 }
-2
-
-
 
 //middletable data after yes/no
 ShiftOperator.post(
@@ -2360,7 +2388,6 @@ ShiftOperator.post(
   jsonParser,
   async (req, res, next) => {
     try {
-
       const responseData = [];
 
       for (let i = 0; i < req.body.afterloadService.length; i++) {
@@ -2613,37 +2640,26 @@ ShiftOperator.post(
   }
 );
 
-
 //check QtyCut for Mark as completed
-ShiftOperator.post(
-  "/getQtydata",
-  jsonParser,
-  async (req, res, next) => {
-    // console.log('getqty', req.body);
-    try {
-      const sqlQuery = `SELECT * FROM magodmis.ncprogram_partslist n WHERE n.NCId='${req.body.NCId}'`;
-      // console.log("SQL Query:", sqlQuery); // Log the SQL query
+ShiftOperator.post("/getQtydata", jsonParser, async (req, res, next) => {
+  // console.log('getqty', req.body);
+  try {
+    const sqlQuery = `SELECT * FROM magodmis.ncprogram_partslist n WHERE n.NCId='${req.body.NCId}'`;
+    // console.log("SQL Query:", sqlQuery); // Log the SQL query
 
-      mchQueryMod(
-        sqlQuery,
-        (err, data) => {
-          if (err) {
-            logger.error(err);
-            return res.status(500).send('Internal Server Error');
-          } else {
-            // console.log("Query executed successfully.");
-            // console.log("Returned data is", data);
-            res.send(data);
-          }
-        }
-      );
-    } catch (error) {
-      next(error);
-    }
+    mchQueryMod(sqlQuery, (err, data) => {
+      if (err) {
+        logger.error(err);
+        return res.status(500).send("Internal Server Error");
+      } else {
+        // console.log("Query executed successfully.");
+        // console.log("Returned data is", data);
+        res.send(data);
+      }
+    });
+  } catch (error) {
+    next(error);
   }
-);
-
-
-
+});
 
 module.exports = ShiftOperator;
