@@ -664,61 +664,100 @@ ShiftOperator.post(
 );
 
 //MachineTask DownTableData Service
+// ShiftOperator.post(
+//   "/MachineTasksService",
+//   jsonParser,
+//   async (req, res, next) => {
+//     // Step 1: Execute the first query
+//     const firstQuery = `
+//     SELECT *
+//     FROM magodmis.shopfloor_part_issueregister
+//     WHERE magodmis.shopfloor_part_issueregister.NcId = '${req.body.NCId}' AND  magodmis.shopfloor_part_issueregister.Status = 'Created';
+//   `;
+
+//     try {
+//       mchQueryMod(firstQuery, async (err, firstQueryResult) => {
+//         if (err) {
+//           console.error("Error in first query:", err);
+//           res.status(500).send("Internal Server Error");
+//         } else {
+//           if (
+//             firstQueryResult &&
+//             firstQueryResult.length > 0 &&
+//             firstQueryResult[0].IssueID
+//           ) {
+//             // Extract IssueID from the first query result
+//             const issueId = firstQueryResult[0].IssueID;
+
+//             // Step 2: Execute the third query using the extracted IssueID directly
+//             const thirdQuery = `
+//             SELECT s.*, m.Customer, m.RV_No, m.RV_Date, m1.PartId, m1.CustBOM_Id
+//             FROM magodmis.shopfloor_bom_issuedetails s
+//             JOIN magodmis.material_receipt_register m ON m.RvID = s.RV_Id
+//             JOIN magodmis.mtrl_part_receipt_details m1 ON m1.Id = s.PartReceipt_DetailsID
+//             WHERE s.IV_ID = '${issueId}';
+//           `;
+
+//             try {
+//               mchQueryMod(thirdQuery, async (err, thirdQueryResult) => {
+//                 if (err) {
+//                   console.error("Error in third query:", err);
+//                   res.status(500).send("Internal Server Error");
+//                 } else {
+//                   res.send(thirdQueryResult);
+//                 }
+//               });
+//             } catch (error) {
+//               console.error("Error in third query:", error);
+//               next(error);
+//             }
+//           } else {
+//             // Handle the case where IssueID is not found in the first query result
+//             res.status(404).send("IssueID not found in the first query result");
+//           }
+//         }
+//       });
+//     } catch (error) {
+//       console.error("Error outside callback:", error);
+//       next(error);
+//     }
+//   }
+// );
+
 ShiftOperator.post(
   "/MachineTasksService",
   jsonParser,
   async (req, res, next) => {
-    // Step 1: Execute the first query
-    const firstQuery = `
-    SELECT *
-    FROM magodmis.shopfloor_part_issueregister
-    WHERE magodmis.shopfloor_part_issueregister.NcId = '${req.body.NCId}' AND  magodmis.shopfloor_part_issueregister.Status = 'Created';
-  `;
+    const combinedQuery = `
+      SELECT 
+        s.*, 
+        m.Customer, 
+        m.RV_No, 
+        m.RV_Date, 
+        m1.PartId, 
+        m1.CustBOM_Id
+      FROM magodmis.shopfloor_part_issueregister r
+      JOIN magodmis.shopfloor_bom_issuedetails s ON r.IssueID = s.IV_ID
+      JOIN magodmis.material_receipt_register m ON m.RvID = s.RV_Id
+      JOIN magodmis.mtrl_part_receipt_details m1 ON m1.Id = s.PartReceipt_DetailsID
+      WHERE r.NcId = '${req.body.NCId}' 
+        AND r.Status = 'Created';
+    `;
 
     try {
-      mchQueryMod(firstQuery, async (err, firstQueryResult) => {
+      mchQueryMod(combinedQuery, (err, result) => {
         if (err) {
-          console.error("Error in first query:", err);
+          console.error("Error in query:", err);
           res.status(500).send("Internal Server Error");
+        } else if (!result || result.length === 0) {
+          res.status(404).send("Data not found");
         } else {
-          if (
-            firstQueryResult &&
-            firstQueryResult.length > 0 &&
-            firstQueryResult[0].IssueID
-          ) {
-            // Extract IssueID from the first query result
-            const issueId = firstQueryResult[0].IssueID;
-
-            // Step 2: Execute the third query using the extracted IssueID directly
-            const thirdQuery = `
-            SELECT s.*, m.Customer, m.RV_No, m.RV_Date, m1.PartId, m1.CustBOM_Id
-            FROM magodmis.shopfloor_bom_issuedetails s
-            JOIN magodmis.material_receipt_register m ON m.RvID = s.RV_Id
-            JOIN magodmis.mtrl_part_receipt_details m1 ON m1.Id = s.PartReceipt_DetailsID
-            WHERE s.IV_ID = '${issueId}';
-          `;
-
-            try {
-              mchQueryMod(thirdQuery, async (err, thirdQueryResult) => {
-                if (err) {
-                  console.error("Error in third query:", err);
-                  res.status(500).send("Internal Server Error");
-                } else {
-                  res.send(thirdQueryResult);
-                }
-              });
-            } catch (error) {
-              console.error("Error in third query:", error);
-              next(error);
-            }
-          } else {
-            // Handle the case where IssueID is not found in the first query result
-            res.status(404).send("IssueID not found in the first query result");
-          }
+          res.send(result);
+          // console.log(result); 
         }
       });
     } catch (error) {
-      console.error("Error outside callback:", error);
+      console.error("Error in processing request:", error);
       next(error);
     }
   }
