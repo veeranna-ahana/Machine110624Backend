@@ -654,6 +654,8 @@ ShiftOperator.post(
             console.log(error);
           } else {
             res.send(data);
+            console.log("----------------------------");
+            console.log(data);
           }
         }
       );
@@ -728,6 +730,8 @@ ShiftOperator.post(
   "/MachineTasksService",
   jsonParser,
   async (req, res, next) => {
+    console.log("NCId", req.body.NCId);
+
     const combinedQuery = `
       SELECT 
         s.*, 
@@ -753,7 +757,7 @@ ShiftOperator.post(
           res.status(404).send("Data not found");
         } else {
           res.send(result);
-          // console.log(result); 
+          console.log(result);
         }
       });
     } catch (error) {
@@ -1753,6 +1757,7 @@ ShiftOperator.post(
             console.log(error);
           } else {
             res.send(data);
+            console.log(data);
           }
         }
       );
