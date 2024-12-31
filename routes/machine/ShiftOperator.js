@@ -594,7 +594,7 @@ ShiftOperator.post("/addStoppageTaskNo", jsonParser, async (req, res, next) => {
 
 //GET SHIFT DETAILS
 ShiftOperator.post("/getShiftLog", jsonParser, async (req, res, next) => {
-  // console.log('required ShiftId is ',req.body.selectshifttable.ShiftID);
+  console.log("required ShiftId is ", req.body.selectshifttable);
   try {
     mchQueryMod(
       `SELECT  s.*,(TIMESTAMPDIFF(MINUTE,s.FromTime,s.ToTime)) as SrlTime FROM magodmis.shiftlogbook s WHERE s.ShiftID='${req.body.selectshifttable.ShiftID}' and Machine='${req.body.selectshifttable.Machine}'`,
@@ -612,6 +612,32 @@ ShiftOperator.post("/getShiftLog", jsonParser, async (req, res, next) => {
     next(error);
   }
 });
+
+//GET SHIFT DETAILS Initial sift
+ShiftOperator.post(
+  "/getInitialShiftLog",
+  jsonParser,
+  async (req, res, next) => {
+    const { ShiftID, Machine } = req.body.selectshifttable; // Destructure request body
+    const previousShiftID = parseInt(ShiftID) - 1; // Calculate previous ShiftID
+    try {
+      mchQueryMod(
+        `SELECT  s.*,(TIMESTAMPDIFF(MINUTE,s.FromTime,s.ToTime)) as SrlTime FROM magodmis.shiftlogbook s WHERE s.ShiftID='${previousShiftID}' and Machine='${Machine}'`,
+        (err, data) => {
+          if (err) {
+            logger.error(err);
+            // res.status(500).send('Internal Server Error');
+            console.log(error);
+          } else {
+            res.send(data);
+          }
+        }
+      );
+    } catch (error) {
+      next(error);
+    }
+  }
+);
 
 ///get Machine Tasks Table Data
 ShiftOperator.post("/MachineTasksData", jsonParser, async (req, res, next) => {
