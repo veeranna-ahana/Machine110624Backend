@@ -619,10 +619,12 @@ ShiftOperator.post(
   jsonParser,
   async (req, res, next) => {
     const { ShiftID, Machine } = req.body.selectshifttable; // Destructure request body
+    // console.log(ShiftID, Machine, "---------------------------");
+
     const previousShiftID = parseInt(ShiftID) - 1; // Calculate previous ShiftID
     try {
       mchQueryMod(
-        `SELECT  s.*,(TIMESTAMPDIFF(MINUTE,s.FromTime,s.ToTime)) as SrlTime FROM magodmis.shiftlogbook s WHERE s.ShiftID='${previousShiftID}' and Machine='${Machine}'`,
+        `SELECT  s.*,(TIMESTAMPDIFF(MINUTE,s.FromTime,s.ToTime)) as SrlTime FROM magodmis.shiftlogbook s WHERE s.ShiftID='147355' and Machine='Laser 11'`,
         (err, data) => {
           if (err) {
             logger.error(err);
@@ -680,8 +682,8 @@ ShiftOperator.post(
             console.log(error);
           } else {
             res.send(data);
-            console.log("----------------------------");
-            console.log(data);
+            // console.log("----------------------------");
+            // console.log(data);
           }
         }
       );
@@ -756,7 +758,7 @@ ShiftOperator.post(
   "/MachineTasksService",
   jsonParser,
   async (req, res, next) => {
-    console.log("NCId", req.body.NCId);
+    // console.log("NCId", req.body.NCId);
 
     const combinedQuery = `
       SELECT 
