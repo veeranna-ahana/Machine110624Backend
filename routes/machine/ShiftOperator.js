@@ -18,6 +18,17 @@ const { Console } = require("winston/lib/winston/transports");
 // create application/json parser
 var jsonParser = bodyParser.json();
 
+// Function for formating the date
+function formatDate(inputDate) {
+  // Split the date into parts
+  const [datePart, timePart] = inputDate.split(" ");
+  const [day, month, year] = datePart.split("/");
+
+  // Reformat the date
+  const formattedDate = `${year}/${month}/${day} ${timePart}`;
+  return formattedDate;
+}
+
 // Machine List For Shift Operator
 ShiftOperator.get("/getallMachines", async (req, res, next) => {
   try {
@@ -1324,7 +1335,15 @@ ShiftOperator.post("/programCompleted", jsonParser, async (req, res, next) => {
 });
 
 ShiftOperator.post("/onClickYes", jsonParser, async (req, res, next) => {
-  // console.log("req.body.selectshifttable is",req.body.selectshifttable);
+  // console.log("req.body.selectshifttable is", req.body.selectshifttable);
+
+  const formattedSelectedFromTime = formatDate(
+    req.body.selectshifttable.FromTime
+  );
+  const formattedSelectedToTime = formatDate(req.body.selectshifttable.ToTime);
+
+  // console.log("Date", formattedSelectedFromTime);
+
   try {
     // New mchQueryMod block to perform SELECT operation
     mchQueryMod(
@@ -1351,7 +1370,7 @@ ShiftOperator.post("/onClickYes", jsonParser, async (req, res, next) => {
         mchQueryMod(
           `
         UPDATE magodmis.shiftlogbook 
-        SET ToTime='${req.body.selectshifttable.FromTime}'
+        SET ToTime='${formattedSelectedFromTime}'
         WHERE ShiftLogId='${lastRow.ShiftLogId}';
       `,
           (updateToTimeErr, updateToTimeResult) => {
@@ -1379,9 +1398,7 @@ ShiftOperator.post("/onClickYes", jsonParser, async (req, res, next) => {
                       req.body.requiredProgram[0].NCProgarmNo
                     }', '${req.body.selectshifttable.Operator}', '${
                       req.body.requiredProgram[0].StopID
-                    }','${req.body.selectshifttable.FromTime}', now(), ${
-                      count + 1
-                    })`,
+                    }','${formattedSelectedFromTime}', now(), ${count + 1})`,
                     (insertErr, data) => {
                       if (insertErr) {
                         logger.error(insertErr);
@@ -1389,7 +1406,7 @@ ShiftOperator.post("/onClickYes", jsonParser, async (req, res, next) => {
                       } else {
                         // Now, perform the update operation
                         mchQueryMod(
-                          `UPDATE machine_data.machinestatus SET Operator='${req.body.selectshifttable.Operator}', ShiftStartTime='${req.body.selectshifttable.FromTime}', ShiftFinishTime='${req.body.selectshifttable.ToTime}',ShiftID='${req.body.selectshifttable.ShiftID}' WHERE MachineName='${req.body.selectshifttable.Machine}'`,
+                          `UPDATE machine_data.machinestatus SET Operator='${req.body.selectshifttable.Operator}', ShiftStartTime='${formattedSelectedFromTime}', ShiftFinishTime='${formattedSelectedToTime}',ShiftID='${req.body.selectshifttable.ShiftID}' WHERE MachineName='${req.body.selectshifttable.Machine}'`,
                           (updateErr, updateData) => {
                             if (updateErr) {
                               logger.error(updateErr);
