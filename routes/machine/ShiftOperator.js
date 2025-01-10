@@ -1436,6 +1436,13 @@ ShiftOperator.post(
   "/onClickYesStoppage",
   jsonParser,
   async (req, res, next) => {
+    const formattedSelectedFromTime = formatDate(
+      req.body.selectshifttable.FromTime
+    );
+    const formattedSelectedToTime = formatDate(
+      req.body.selectshifttable.ToTime
+    );
+
     try {
       mchQueryMod(
         `
@@ -1461,7 +1468,7 @@ ShiftOperator.post(
           mchQueryMod(
             `
                   UPDATE magodmis.shiftlogbook 
-                  SET ToTime='${req.body.selectshifttable.FromTime}' 
+                  SET ToTime='${formattedSelectedFromTime}' 
                   WHERE ShiftLogId='${lastRow.ShiftLogId}';
                   `,
             (updateToTimeErr, updateToTimeResult) => {
@@ -1489,9 +1496,7 @@ ShiftOperator.post(
                         req.body.requiredProgram[0].NCProgarmNo
                       }', '${req.body.selectshifttable.Operator}', '${
                         req.body.requiredProgram[0].StopID
-                      }','${req.body.selectshifttable.FromTime}', now(), ${
-                        count + 1
-                      })`,
+                      }','${formattedSelectedFromTime}', now(), ${count + 1})`,
                       (insertErr, data) => {
                         if (insertErr) {
                           logger.error(insertErr);
@@ -1499,7 +1504,7 @@ ShiftOperator.post(
                         } else {
                           // Now, perform the update operation
                           mchQueryMod(
-                            `UPDATE machine_data.machinestatus SET Operator='${req.body.selectshifttable.Operator}', ShiftStartTime='${req.body.selectshifttable.FromTime}', ShiftFinishTime='${req.body.selectshifttable.ToTime}',ShiftID='${req.body.selectshifttable.ShiftID}' WHERE MachineName='${req.body.selectshifttable.Machine}'`,
+                            `UPDATE machine_data.machinestatus SET Operator='${req.body.selectshifttable.Operator}', ShiftStartTime='${formattedSelectedFromTime}', ShiftFinishTime='${formattedSelectedToTime}',ShiftID='${req.body.selectshifttable.ShiftID}' WHERE MachineName='${req.body.selectshifttable.Machine}'`,
                             (updateErr, updateData) => {
                               if (updateErr) {
                                 logger.error(updateErr);
@@ -1507,7 +1512,7 @@ ShiftOperator.post(
                               } else {
                                 // Continue with the insertion operation for shiftstoppagelist
                                 mchQueryMod(
-                                  `INSERT INTO magodmis.shiftstoppagelist (ShiftID,Operator,Srl, StoppageID, StoppageReason, StoppageHead, Machine, FromTime, ToTime, Remarks, Locked,ShiftLogId) VALUES('${req.body.selectshifttable.ShiftID}', '${req.body.selectshifttable.Operator}', '0', '${lastRow.StoppageID}', '${req.body.requiredProgram[0].NCProgarmNo}','${lastRow.StoppageID}', '${req.body.selectshifttable.Machine}', '${req.body.selectshifttable.FromTime}', NOW(), '', '0', '${req.body.selectshifttable.ShiftID}')`,
+                                  `INSERT INTO magodmis.shiftstoppagelist (ShiftID,Operator,Srl, StoppageID, StoppageReason, StoppageHead, Machine, FromTime, ToTime, Remarks, Locked,ShiftLogId) VALUES('${req.body.selectshifttable.ShiftID}', '${req.body.selectshifttable.Operator}', '0', '${lastRow.StoppageID}', '${req.body.requiredProgram[0].NCProgarmNo}','${lastRow.StoppageID}', '${req.body.selectshifttable.Machine}', '${formattedSelectedFromTime}', NOW(), '', '0', '${req.body.selectshifttable.ShiftID}')`,
                                   (stoppageInsertErr, stoppageData) => {
                                     if (stoppageInsertErr) {
                                       logger.error(stoppageInsertErr);
@@ -1542,7 +1547,16 @@ ShiftOperator.post(
 );
 
 ShiftOperator.post("/onClickNo", jsonParser, async (req, res, next) => {
-  // console.log("req.body.selectshifttable is",req.body.selectshifttable);
+  // console.log(
+  //   "req.body.selectshifttable onClickNowithProgram",
+  //   req.body.selectshifttable
+  // );
+
+  const formattedSelectedFromTime = formatDate(
+    req.body.selectshifttable.FromTime
+  );
+  const formattedSelectedToTime = formatDate(req.body.selectshifttable.ToTime);
+
   try {
     // New mchQueryMod block to select the last row and update ToTime
     mchQueryMod(
@@ -1569,7 +1583,7 @@ ShiftOperator.post("/onClickNo", jsonParser, async (req, res, next) => {
         mchQueryMod(
           `
         UPDATE magodmis.shiftlogbook 
-        SET ToTime='${req.body.selectshifttable.FromTime}'
+        SET ToTime='${formattedSelectedFromTime}'
         WHERE ShiftLogId='${lastRow.ShiftLogId}';
       `,
           (updateToTimeErr, updateToTimeResult) => {
@@ -1606,7 +1620,7 @@ ShiftOperator.post("/onClickNo", jsonParser, async (req, res, next) => {
                       } else {
                         // Now, perform the update operation
                         mchQueryMod(
-                          `UPDATE machine_data.machinestatus SET Operator='${req.body.selectshifttable.Operator}', ShiftStartTime='${req.body.selectshifttable.FromTime}', ShiftFinishTime='${req.body.selectshifttable.ToTime}',ShiftID='${req.body.selectshifttable.ShiftID}' WHERE MachineName='${req.body.selectshifttable.Machine}'`,
+                          `UPDATE machine_data.machinestatus SET Operator='${req.body.selectshifttable.Operator}', ShiftStartTime='${formattedSelectedFromTime}', ShiftFinishTime='${formattedSelectedToTime}',ShiftID='${req.body.selectshifttable.ShiftID}' WHERE MachineName='${req.body.selectshifttable.Machine}'`,
                           (updateErr, updateData) => {
                             if (updateErr) {
                               logger.error(updateErr);
@@ -1633,6 +1647,11 @@ ShiftOperator.post("/onClickNo", jsonParser, async (req, res, next) => {
 
 //No with Stoppage
 ShiftOperator.post("/onClickNoStoppage", jsonParser, async (req, res, next) => {
+  const formattedSelectedFromTime = formatDate(
+    req.body.selectshifttable.FromTime
+  );
+  const formattedSelectedToTime = formatDate(req.body.selectshifttable.ToTime);
+
   try {
     // Select the last row and update ToTime in magodmis.shiftlogbook
     mchQueryMod(
@@ -1658,7 +1677,7 @@ ShiftOperator.post("/onClickNoStoppage", jsonParser, async (req, res, next) => {
         mchQueryMod(
           `
                   UPDATE magodmis.shiftlogbook 
-                  SET ToTime='${req.body.selectshifttable.FromTime}'
+                  SET ToTime='${formattedSelectedFromTime}'
                   WHERE ShiftLogId='${lastRow.ShiftLogId}';
                   `,
           (updateToTimeErr, updateToTimeResult) => {
@@ -1694,7 +1713,7 @@ ShiftOperator.post("/onClickNoStoppage", jsonParser, async (req, res, next) => {
                       } else {
                         // Now, perform the update operation
                         mchQueryMod(
-                          `UPDATE machine_data.machinestatus SET Operator='${req.body.selectshifttable.Operator}', ShiftStartTime='${req.body.selectshifttable.FromTime}', ShiftFinishTime='${req.body.selectshifttable.ToTime}',ShiftID='${req.body.selectshifttable.ShiftID}' WHERE MachineName='${req.body.selectshifttable.Machine}'`,
+                          `UPDATE machine_data.machinestatus SET Operator='${req.body.selectshifttable.Operator}', ShiftStartTime='${formattedSelectedFromTime}', ShiftFinishTime='${formattedSelectedToTime}',ShiftID='${req.body.selectshifttable.ShiftID}' WHERE MachineName='${req.body.selectshifttable.Machine}'`,
                           (updateErr, updateData) => {
                             if (updateErr) {
                               logger.error(updateErr);
