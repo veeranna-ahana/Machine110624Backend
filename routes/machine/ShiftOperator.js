@@ -1219,6 +1219,9 @@ ShiftOperator.post("/getprogramParts", jsonParser, async (req, res, next) => {
 ShiftOperator.post("/SaveprogramParts", jsonParser, async (req, res, next) => {
   try {
     const programPartsData = req.body.programPartsData;
+
+    console.log("Hello save", programPartsData);
+
     const responses = [];
 
     for (const part of programPartsData) {
@@ -1254,6 +1257,7 @@ ShiftOperator.post("/SaveprogramParts", jsonParser, async (req, res, next) => {
             .length
         ) {
           res.send(responses);
+          console.log("Helo rep", responses);
         }
       });
     }
@@ -2595,7 +2599,7 @@ ShiftOperator.post(
   "/getTableTopDeatails",
   jsonParser,
   async (req, res, next) => {
-    // console.log("req.body",req.body);
+    console.log("req.body", req.body);
     try {
       misQueryMod(
         `SELECT * FROM magodmis.shopfloor_part_issueregister WHERE NcId='${req.body.NCId}'`,
